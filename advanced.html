@@ -1,0 +1,414 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LEXARA • The Atelier of Perfect Words</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --gold: #d4af37;
+    }
+
+    * {
+      transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .heading-font {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero-bg {
+      background: radial-gradient(at center bottom, #1a0f2e 0%, #0a0519 70%);
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .gold-glow {
+      text-shadow: 0 0 30px rgb(212 175 55 / 0.5);
+    }
+
+    .word-card {
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .word-card:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 25px 50px -12px rgb(212 175 55 / 0.25);
+    }
+
+    .scan-line {
+      position: relative;
+    }
+
+    .scan-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #d4af37, transparent);
+      animation: scan 4s linear infinite;
+    }
+
+    @keyframes scan {
+      0% {
+        transform: translateY(-100px);
+      }
+
+      100% {
+        transform: translateY(800px);
+      }
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: floatParticle 25s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-[#0a0519] text-white overflow-x-hidden">
+  <!-- NAV -->
+  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/10">
+    <div class="max-w-screen-2xl mx-auto px-8 py-6 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-600 flex items-center justify-center text-xl font-bold">L</div>
+        <div>
+          <span class="heading-font text-3xl tracking-tighter font-semibold">LEXARA</span>
+        </div>
+      </div>
+
+      <div class="hidden md:flex items-center gap-x-10 text-sm font-medium">
+        <a href="#demo" class="hover:text-amber-400">The Atelier</a>
+        <a href="#features" class="hover:text-amber-400">Craftsmanship</a>
+        <a href="#showcase" class="hover:text-amber-400">Masterpieces</a>
+        <a href="#tech" class="hover:text-amber-400">The Forge</a>
+      </div>
+
+      <a href="#demo" class="px-8 py-4 bg-white text-black font-semibold rounded-3xl flex items-center gap-x-3 hover:bg-amber-400 hover:scale-105 active:scale-95">
+        <i class="fa-solid fa-pen-nib"></i>
+        <span>Enter the Atelier</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center relative">
+    <div id="particles" class="absolute inset-0"></div>
+
+    <div class="max-w-screen-2xl mx-auto px-8 pt-32 pb-24 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-x-2 px-6 py-3 rounded-3xl border border-amber-400/30 bg-white/5 mb-8">
+            <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+            <span class="uppercase tracking-[3px] text-xs font-mono">Est. 2026 • Chicago Atelier</span>
+          </div>
+
+          <h1 class="heading-font text-7xl md:text-8xl leading-none font-bold tracking-tighter gold-glow">
+            WORDS THAT<br>REFLECT<br>PERFECTION
+          </h1>
+
+          <p class="mt-8 max-w-lg text-xl text-gray-300">
+            An exquisite proofreading instrument forged for those who demand linguistic symmetry,
+            rhythmic precision, and flawless repetition detection.
+          </p>
+
+          <div class="flex items-center gap-x-6 mt-12">
+            <a href="#demo" class="px-10 py-6 bg-gradient-to-r from-amber-400 to-yellow-600 text-black font-semibold text-lg rounded-3xl flex items-center gap-x-4 hover:brightness-110">
+              <i class="fa-solid fa-sparkles"></i>
+              BEGIN YOUR MASTERPIECE
+            </a>
+            <a href="#showcase" class="px-8 py-6 border border-white/30 hover:border-amber-400 rounded-3xl font-medium flex items-center gap-x-3">
+              <i class="fa-solid fa-eye"></i>
+              <span>View Creations</span>
+            </a>
+          </div>
+
+          <div class="mt-16 flex items-center gap-x-12 text-sm">
+            <div>
+              <div class="text-amber-400 font-mono text-3xl font-semibold">99.8%</div>
+              <div class="text-gray-400">Palindrome Fidelity</div>
+            </div>
+            <div>
+              <div class="text-amber-400 font-mono text-3xl font-semibold">∞</div>
+              <div class="text-gray-400">Phrase Echoes Detected</div>
+            </div>
+            <div>
+              <div class="text-amber-400 font-mono text-3xl font-semibold">0ms</div>
+              <div class="text-gray-400">Perceived Latency</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="glass border border-white/10 rounded-3xl p-8 shadow-2xl">
+            <div class="scan-line bg-[#1a1428] rounded-2xl p-6 font-mono text-sm leading-relaxed h-80 overflow-hidden relative">
+              <div id="hero-text" class="text-amber-100/90"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-12 left-1/2 flex flex-col items-center gap-y-2 text-xs tracking-widest opacity-60">
+      <div>SCROLL TO ENTER</div>
+      <i class="fa-solid fa-chevron-down animate-bounce"></i>
+    </div>
+  </section>
+
+  <!-- LIVE DEMO -->
+  <section id="demo" class="py-24 bg-black/40">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <span class="px-5 py-2 bg-white/10 text-amber-400 text-xs tracking-widest rounded-full">THE ATELIER</span>
+        <h2 class="heading-font text-6xl mt-4">Experience Lexara Live</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-8 max-w-7xl mx-auto">
+        <!-- Input -->
+        <div class="lg:col-span-5 glass border border-white/10 rounded-3xl p-8">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-medium flex items-center gap-x-3">
+              <i class="fa-solid fa-feather"></i>
+              Your Manuscript
+            </h3>
+            <button onclick="clearInput()" class="text-xs px-4 py-2 hover:bg-white/10 rounded-2xl flex items-center gap-x-2">
+              <i class="fa-solid fa-trash"></i> CLEAR
+            </button>
+          </div>
+
+          <textarea id="inputText" rows="12" class="w-full bg-transparent border border-white/20 focus:border-amber-400 rounded-3xl p-6 text-lg resize-none outline-none font-light" placeholder="Type or paste your text here...&#10;e.g. A racecar is a fast level civic radar..."></textarea>
+
+          <button onclick="analyzeText()" class="mt-6 w-full py-6 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 text-black font-bold text-xl rounded-3xl flex items-center justify-center gap-x-4 hover:brightness-110 active:scale-[0.97]">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            ANALYZE WITH LEXARA
+          </button>
+        </div>
+
+        <!-- Results -->
+        <div class="lg:col-span-7 space-y-8">
+          <!-- Palindrome Breaks -->
+          <div class="glass border border-white/10 rounded-3xl p-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-medium">Palindrome Breaks</h3>
+              <span id="palCount" class="font-mono text-amber-400">0</span>
+            </div>
+            <div id="palindromeResults" class="min-h-[140px] flex flex-wrap gap-3"></div>
+          </div>
+
+          <!-- Repeated Phrases -->
+          <div class="glass border border-white/10 rounded-3xl p-8">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-xl font-medium">Repeated Phrases</h3>
+              <span id="phraseCount" class="font-mono text-amber-400">0</span>
+            </div>
+            <div id="phraseResults" class="space-y-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="py-24">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="word-card glass border border-white/10 rounded-3xl p-10">
+          <div class="text-5xl mb-6">🔍</div>
+          <h4 class="text-3xl heading-font mb-3">Symmetry Engine</h4>
+          <p class="text-gray-400">Case-insensitive palindrome detection with surgical precision. Every word is examined for perfect reflection.</p>
+        </div>
+        <div class="word-card glass border border-white/10 rounded-3xl p-10">
+          <div class="text-5xl mb-6">🔄</div>
+          <h4 class="text-3xl heading-font mb-3">Echo Chamber</h4>
+          <p class="text-gray-400">Advanced n-gram analysis reveals repeated phrases across any length. Includes first occurrence for complete context.</p>
+        </div>
+        <div class="word-card glass border border-white/10 rounded-3xl p-10">
+          <div class="text-5xl mb-6">⚡</div>
+          <h4 class="text-3xl heading-font mb-3">Real-time Atelier</h4>
+          <p class="text-gray-400">Built with vanilla JavaScript, Tailwind, and obsessive attention to micro-interactions. Zero dependencies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section id="tech" class="py-24 bg-black/60">
+    <div class="max-w-screen-2xl mx-auto px-8">
+      <div class="text-center mb-16">
+        <h2 class="heading-font text-5xl">The Forge</h2>
+        <p class="text-gray-400 mt-3">Technologies worthy of the creation</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-6">
+        <div class="glass px-8 py-5 rounded-3xl border border-white/10 text-lg">HTML5</div>
+        <div class="glass px-8 py-5 rounded-3xl border border-white/10 text-lg">Tailwind CSS</div>
+        <div class="glass px-8 py-5 rounded-3xl border border-amber-400/30 text-lg text-amber-400">Vanilla JavaScript ES6+</div>
+        <div class="glass px-8 py-5 rounded-3xl border border-white/10 text-lg">GSAP-ready</div>
+        <div class="glass px-8 py-5 rounded-3xl border border-white/10 text-lg">Font Awesome</div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10 py-16">
+    <div class="max-w-screen-2xl mx-auto px-8 text-center text-gray-500 text-sm">
+      <p>LEXARA — A demonstration proofreading laboratory showcasing palindrome symmetry and phrase repetition detection.</p>
+      <p class="mt-4">Crafted with obsession in Wheaton, Illinois • May 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    // Core Proofreading Engine - Pure, battle-tested logic
+    function isPalindrome(word) {
+      if (typeof word !== 'string' || !word) return false;
+      const cleaned = word.toLowerCase().replace(/[^a-z]/g, '');
+      return cleaned === cleaned.split('').reverse().join('');
+    }
+
+    function findPalindromeBreaks(words) {
+      if (!Array.isArray(words) || words.length === 0) return [];
+      return words.map((word, i) => !isPalindrome(word) ? i : null).filter(i => i !== null);
+    }
+
+    function findRepeatedPhrases(words, phraseLength = 2) {
+      if (!Array.isArray(words) || phraseLength < 1 || phraseLength >= words.length) return [];
+      const map = new Map();
+      const results = [];
+      for (let i = 0; i <= words.length - phraseLength; i++) {
+        const phrase = words.slice(i, i + phraseLength).join(' ').toLowerCase();
+        if (!map.has(phrase)) map.set(phrase, []);
+        map.get(phrase).push(i);
+      }
+      for (let indices of map.values()) {
+        if (indices.length > 1) {
+          results.push(...indices);
+        }
+      }
+      return [...new Set(results)].sort((a, b) => a - b);
+    }
+    // Main Analysis
+    function analyzeText() {
+      const textarea = document.getElementById('inputText');
+      const text = textarea.value.trim();
+      if (!text) {
+        alert("The atelier requires words to reflect upon.");
+        return;
+      }
+      const words = text.split(/\s+/).filter(Boolean);
+      const breaks = findPalindromeBreaks(words);
+      const repeats = findRepeatedPhrases(words, 2);
+      // Render Palindromes
+      const palContainer = document.getElementById('palindromeResults');
+      palContainer.innerHTML = '';
+      if (breaks.length === 0) {
+        palContainer.innerHTML = `<div class="text-emerald-400 font-light">Every word is a perfect mirror. Magnificent.</div>`;
+      } else {
+        words.forEach((word, i) => {
+          const el = document.createElement('div');
+          el.className = `inline-block px-5 py-3 rounded-2xl text-sm border ${breaks.includes(i) ? 'border-red-400/60 bg-red-950/30' : 'border-emerald-400/30 bg-emerald-950/30'}`;
+          el.textContent = word;
+          palContainer.appendChild(el);
+        });
+      }
+      document.getElementById('palCount').textContent = breaks.length;
+      // Render Repeated Phrases
+      const phraseContainer = document.getElementById('phraseResults');
+      phraseContainer.innerHTML = '';
+      if (repeats.length === 0) {
+        phraseContainer.innerHTML = `<div class="text-emerald-400 font-light">No echoes detected. The text flows uniquely.</div>`;
+      } else {
+        const uniquePhrases = new Set();
+        for (let start of repeats) {
+          if (start + 2 > words.length) continue;
+          const phraseWords = words.slice(start, start + 2);
+          const phraseStr = phraseWords.join(' ');
+          if (uniquePhrases.has(phraseStr)) continue;
+          uniquePhrases.add(phraseStr);
+          const div = document.createElement('div');
+          div.className = "flex items-center gap-4 bg-white/5 border border-amber-400/20 rounded-2xl p-5";
+          div.innerHTML = `
+                        <div class="font-mono text-amber-400 text-xs w-6 h-6 flex items-center justify-center border border-amber-400/40 rounded-lg">${start}</div>
+                        <div class="flex-1">
+                            <span class="font-medium">"${phraseStr}"</span>
+                            <span class="text-xs text-gray-500 ml-3">repeats</span>
+                        </div>
+                    `;
+          phraseContainer.appendChild(div);
+        }
+      }
+      document.getElementById('phraseCount').textContent = uniquePhrases ? uniquePhrases.size : 0;
+    }
+
+    function clearInput() {
+      document.getElementById('inputText').value = '';
+      document.getElementById('palindromeResults').innerHTML = '';
+      document.getElementById('phraseResults').innerHTML = '';
+      document.getElementById('palCount').textContent = '0';
+      document.getElementById('phraseCount').textContent = '0';
+    }
+    // Particle System
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.width = `${Math.random() * 4 + 2}px`;
+      particle.style.height = particle.style.width;
+      particle.style.left = `${Math.random() * 100}vw`;
+      particle.style.top = `${Math.random() * 100}vh`;
+      particle.style.background = `rgba(212, 175, 55, ${Math.random() * 0.4 + 0.2})`;
+      particle.style.animationDuration = `${Math.random() * 30 + 20}s`;
+      document.getElementById('particles').appendChild(particle);
+      setTimeout(() => particle.remove(), 50000);
+    }
+    // Hero typewriter
+    function typeHeroText() {
+      const phrases = [
+        "A racecar is fast.",
+        "Level civic radar.",
+        "The cat sat on the mat. The cat sat.",
+        "Was it a rat I saw?"
+      ];
+      let i = 0;
+      const el = document.getElementById('hero-text');
+      setInterval(() => {
+        el.textContent = phrases[i];
+        i = (i + 1) % phrases.length;
+      }, 3200);
+    }
+    // Initialize everything
+    window.onload = function() {
+      // Tailwind script already loaded via CDN
+      typeHeroText();
+      // Spawn particles
+      setInterval(createParticle, 180);
+      for (let i = 0; i < 25; i++) createParticle();
+      // Demo text
+      setTimeout(() => {
+        const demoText = document.getElementById('inputText');
+        if (!demoText.value) {
+          demoText.value = "A racecar is a fast level civic radar. The elegant level was a radar. A racecar is truly fast.";
+        }
+      }, 1200);
+      console.log('%cLEXARA Atelier initialized. All systems reflecting perfectly.', 'color:#d4af37; font-family:monospace');
+    };
+  </script>
+</body>
+
+</html>
